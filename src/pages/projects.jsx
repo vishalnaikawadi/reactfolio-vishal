@@ -39,21 +39,14 @@ const Projects = () => {
 					</div>
 					<div className="projects-container">
 						<div className="title projects-title">
-							Things I’ve made trying to put my dent in the
-							universe.
+						
+						Check out some of the projects I've worked on. I think you'll find them interesting
 						</div>
 
 						<div className="subtitle projects-subtitle">
-							I've worked on a variety of projects over the years
-							and I'm proud of the progress I've made. Many of
-							these projects are open-source and available for
-							others to explore and contribute to. If you're
-							interested in any of the projects I've worked on,
-							please feel free to check out the code and suggest
-							any improvements or enhancements you might have in
-							mind. Collaborating with others is a great way to
-							learn and grow, and I'm always open to new ideas and
-							feedback.
+						Throughout my career, I have had the privilege of engaging in a diverse range of projects, with a primary focus on native Android development.
+						 More recently, I've ventured into the realm of React Native. As I look forward to the year ahead, my aspiration is to attain a strong proficiency in React,
+						  React Native, and iOS development. So wish me luck on this Journey.
 						</div>
 
 						<div className="projects-list">
