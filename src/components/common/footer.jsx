@@ -18,9 +18,6 @@ const Footer = () => {
 						<li className="footer-nav-link-item">
 							<Link to="/projects">Projects</Link>
 						</li>
-						{/* <li className="footer-nav-link-item">
-							<Link to="/articles">Articles</Link>
-						</li> */}
 						<li className="footer-nav-link-item">
 							<Link to="/contact">Contact</Link>
 						</li>
@@ -28,8 +25,7 @@ const Footer = () => {
 				</div>
 
 				<div className="footer-credits">
-					<div className="footer-credits-text">
-					</div>
+					<div className="footer-credits-text" />
 				</div>
 			</div>
 		</React.Fragment>

@@ -6,6 +6,7 @@
 	margin-top: 50px;
 	padding-bottom: 25px;
 	align-items: center;
+	gap: 24px;
 }
 
 .footer-links,
@@ -22,16 +23,18 @@
 	list-style: none;
 	justify-content: space-between;
 	align-items: center;
+	gap: 20px;
 }
 
 .footer-nav-link-item {
 	font-weight: bold;
-	font-size: 80%;
+	font-size: 13px;
 }
 
 .footer-nav-link-list a {
 	text-decoration: none;
 	color: var(--secondary-color);
+	transition: color 0.2s ease;
 }
 
 .footer-nav-link-list a:hover {

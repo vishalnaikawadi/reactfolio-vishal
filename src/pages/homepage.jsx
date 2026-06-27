@@ -1,73 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
-import { faL, faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import {
+	faArrowRight,
+	faBookOpen,
+	faEnvelope,
+	faMailBulk,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faTwitter,
 	faGithub,
 	faStackOverflow,
-	faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
-import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
-import AllProjects from "../components/projects/allProjects";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
-import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
-import Education from "../components/homepage/education";
 
 const Homepage = () => {
-	const [stayLogo, setStayLogo] = useState(false);
-	const [logoSize, setLogoSize] = useState(80);
-	const [oldLogoSize, setOldLogoSize] = useState(80);
-
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			let scroll = Math.round(window.pageYOffset, 2);
-
-			let newLogoSize = 80 - (scroll * 4) / 10;
-
-			if (newLogoSize < oldLogoSize) {
-				if (newLogoSize > 40) {
-					setLogoSize(newLogoSize);
-					setOldLogoSize(newLogoSize);
-					setStayLogo(false);
-				} else {
-					setStayLogo(true);
-				}
-			} else {
-				setLogoSize(newLogoSize);
-				setStayLogo(false);
-			}
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, [logoSize, oldLogoSize]);
-
 	const currentSEO = SEO.find((item) => item.page === "home");
-
-	const logoStyle = {
-		display: "flex",
-		position: stayLogo ? "fixed" : "relative",
-		top: stayLogo ? "3vh" : "auto",
-		zIndex: 999,
-		border: stayLogo ? "1px solid white" : "none",
-		borderRadius: stayLogo ? "50%" : "none",
-		boxShadow: stayLogo ? "0px 4px 10px rgba(0, 0, 0, 0.25)" : "none",
-	};
 
 	return (
 		<React.Fragment>
@@ -83,15 +44,13 @@ const Homepage = () => {
 			<div className="page-content">
 				<NavBar active="home" />
 				<div className="content-wrapper">
-					<div className="homepage-logo-container">
-						<div style={logoStyle}>
-							<Logo width={logoSize} link={false} />
-						</div>
-					</div>
-
 					<div className="homepage-container">
 						<div className="homepage-first-area">
 							<div className="homepage-first-area-left-side">
+								<div className="homepage-eyebrow">
+									{INFO.homepage.eyebrow}
+								</div>
+
 								<div className="title homepage-title">
 									{INFO.homepage.title}
 								</div>
@@ -99,16 +58,38 @@ const Homepage = () => {
 								<div className="subtitle homepage-subtitle">
 									{INFO.homepage.description}
 								</div>
+
+								<div className="homepage-actions">
+									<Link to="/projects" className="primary-action">
+										View work
+										<FontAwesomeIcon icon={faArrowRight} />
+									</Link>
+									<a
+										href={`mailto:${INFO.main.email}`}
+										className="secondary-action"
+									>
+										<FontAwesomeIcon icon={faEnvelope} />
+										Contact
+									</a>
+								</div>
+
+								<div className="homepage-skill-cloud" aria-label="Core skills">
+									{INFO.homepage.skills.map((skill) => (
+										<span key={skill}>{skill}</span>
+									))}
+								</div>
 							</div>
 
 							<div className="homepage-first-area-right-side">
-								<div className="homepage-image-container">
-									<div className="homepage-image-wrapper">
-										<img
-											src="homepage.jpg"
-											alt="about"
-											className="homepage-image"
-										/>
+								<div className="homepage-orbit-card">
+									<div className="homepage-image-container">
+										<div className="homepage-image-wrapper">
+											<img
+												src="homepage.jpg"
+												alt="Vishal Naikawadi"
+												className="homepage-image"
+											/>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -149,15 +130,57 @@ const Homepage = () => {
 							</a>
 						</div>
 
-						<div className="homepage-projects">
-							
+						<div className="homepage-stats">
+							{INFO.homepage.stats.map((stat) => (
+								<div className="homepage-stat" key={stat.label}>
+									<strong>{stat.value}</strong>
+									<span>{stat.label}</span>
+								</div>
+							))}
+						</div>
+
+						<div className="homepage-current-build">
+							<div className="current-build-content">
+								<div className="current-build-icon">
+									<FontAwesomeIcon icon={faBookOpen} />
+								</div>
+								<div>
+									<p className="section-kicker">
+										{INFO.homepage.currentBuild.label}
+									</p>
+									<h2>{INFO.homepage.currentBuild.name}</h2>
+									<p>{INFO.homepage.currentBuild.description}</p>
+									<div className="current-build-tags">
+										{INFO.homepage.currentBuild.tags.map((tag) => (
+											<span key={tag}>{tag}</span>
+										))}
+									</div>
+								</div>
+							</div>
+							<a
+								href={INFO.homepage.currentBuild.link}
+								target="_blank"
+								rel="noreferrer"
+								className="current-build-link"
+							>
+								{INFO.homepage.currentBuild.linkText}
+								<FontAwesomeIcon icon={faArrowRight} />
+							</a>
+						</div>
+
+						<div className="homepage-highlight-panel">
+							<div>
+								<p className="section-kicker">How I work</p>
+								<h2>Curiosity, ownership, and steady leadership.</h2>
+							</div>
+							<ul>
+								{INFO.homepage.highlights.map((highlight) => (
+									<li key={highlight}>{highlight}</li>
+								))}
+							</ul>
 						</div>
 
 						<div className="homepage-after-title">
-						<div className="homepage-works">
-								<Education />
-							</div>
-
 							<div className="homepage-works">
 								<Works />
 							</div>

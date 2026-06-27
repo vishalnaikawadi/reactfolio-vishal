@@ -2,15 +2,15 @@ const SEO = [
 	{
 		page: "home",
 		description:
-			"I am a App developer with expertise in Android, React native. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies.",
-		keywords: ["Vishal", "Vishal N", "Vishal Naikawadi"],
+			"Vishal Naikawadi is a Tech Lead and React Native mobile engineer with 8 years of experience across architecture, AI product features, automation, Expo/EAS builds, and app releases.",
+		keywords: ["Vishal Naikawadi", "React Native", "Tech Lead", "Mobile Engineer", "AI"],
 	},
 
 	{
 		page: "about",
 		description:
-			"I am a App developer with expertise in Android, React native. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies.",
-		keywords: ["Vishal", "Vishal N", "Vishal Naikawadi"],
+			"About Vishal Naikawadi, a Mumbai based Tech Lead focused on React Native, React, AI-enabled mobile products, Solo Saga, Claripath, release ownership, and product thinking.",
+		keywords: ["Vishal Naikawadi", "React Native", "React", "Solo Saga", "Claripath", "Mobile Architecture"],
 	},
 
 	{
@@ -23,15 +23,15 @@ const SEO = [
 	{
 		page: "projects",
 		description:
-			"I've worked on a variety of projects over the years and I'm proud of the progress I've made.",
-		keywords: ["Vishal", "Vishal N", "Vishal Naikawadi"],
+			"Selected mobile projects by Vishal Naikawadi, including Quicktakes.ai, LEAD Student App, mAudit, Solo Saga, and Claripath.",
+		keywords: ["Vishal Naikawadi", "Quicktakes.ai", "LEAD Student App", "React Native projects"],
 	},
 
 	{
 		page: "contact",
 		description:
-			"If you're interested in collaborating on a project, feel free to reach out to me. I'm always open to new ideas and opportunities.",
-		keywords: ["Vishal", "Vishal N", "Vishal Naikawadi"],
+			"Contact Vishal Naikawadi for React Native, mobile architecture, AI-enabled product features, automation, and app release work.",
+		keywords: ["Vishal Naikawadi", "Contact", "React Native", "Mobile Engineer"],
 	},
 ];
 

@@ -1,32 +1,40 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/project.css";
 
 const Project = (props) => {
-	const { logo, title, description, linkText, link } = props;
+	const { asset, title, description, tags = [], linkText, link } = props;
+	const isExternal = /^https?:\/\//.test(link);
+	const linkProps = isExternal
+		? { href: link, target: "_blank", rel: "noreferrer" }
+		: { href: link };
 
 	return (
 		<React.Fragment>
 			<div className="project">
-				<Link to={link}>
+				<a {...linkProps}>
 					<div className="project-container">
-						<div className="project-logo">
-							<img src={logo} alt="logo" />
+						<div className="project-asset">
+							<img src={asset} alt={`${title} app asset`} loading="lazy" />
 						</div>
 						<div className="project-title">{title}</div>
 						<div className="project-description">{description}</div>
+						<div className="project-tags">
+							{tags.map((tag) => (
+								<span key={tag}>{tag}</span>
+							))}
+						</div>
 						<div className="project-link">
 							<div className="project-link-icon">
-								<FontAwesomeIcon icon={faLink} />
+								<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
 							</div>
 
 							<div className="project-link-text">{linkText}</div>
 						</div>
 					</div>
-				</Link>
+				</a>
 			</div>
 		</React.Fragment>
 	);

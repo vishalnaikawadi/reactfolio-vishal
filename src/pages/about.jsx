@@ -1,5 +1,13 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faBowlFood,
+	faDumbbell,
+	faFilm,
+	faMotorcycle,
+	faRocket,
+} from "@fortawesome/free-solid-svg-icons";
 
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
@@ -17,6 +25,33 @@ const About = () => {
 	}, []);
 
 	const currentSEO = SEO.find((item) => item.page === "about");
+	const hobbies = [
+		{
+			icon: faMotorcycle,
+			title: "Bike rides",
+			description: "Long rides, open roads, and the reset that comes from motion.",
+		},
+		{
+			icon: faFilm,
+			title: "Anime",
+			description: "I watch everything from shonen and seinen to isekai and mecha.",
+		},
+		{
+			icon: faBowlFood,
+			title: "Food",
+			description: "Finding good coffee, calm corners, new food cultures, and the stories behind them.",
+		},
+		{
+			icon: faDumbbell,
+			title: "Health",
+			description: "Trekking, training regularly, and reading deeply about nutrition resources.",
+		},
+		{
+			icon: faRocket,
+			title: "Astronomy",
+			description: "Space, cosmos, strange scales, and everything that feels out of this world.",
+		},
+	];
 
 	return (
 		<React.Fragment>
@@ -48,6 +83,15 @@ const About = () => {
 								<div className="subtitle about-subtitle">
 									{INFO.about.description}
 								</div>
+
+								<div className="about-focus-grid">
+									{INFO.about.focus.map((item, index) => (
+										<div className="about-focus-card" key={item}>
+											<span>{String(index + 1).padStart(2, "0")}</span>
+											<p>{item}</p>
+										</div>
+									))}
+								</div>
 							</div>
 
 							<div className="about-left-side">
@@ -55,7 +99,7 @@ const About = () => {
 									<div className="about-image-wrapper">
 										<img
 											src="about.jpg"
-											alt="about"
+											alt="Vishal Naikawadi with his bike"
 											className="about-image"
 										/>
 									</div>
@@ -69,6 +113,31 @@ const About = () => {
 						<div className="about-socials-mobile">
 							<Socials />
 						</div>
+
+						<section className="about-hobbies" aria-labelledby="hobbies-title">
+							<div className="about-hobbies-heading">
+								<p className="section-kicker">Outside code</p>
+								<h2 id="hobbies-title">The things that keep me curious.</h2>
+								<p>
+									A small constellation of interests: movement, stories, food,
+									health, and the occasional astronomy rabbit hole.
+								</p>
+							</div>
+
+							<div className="about-hobbies-grid">
+								{hobbies.map((hobby) => (
+									<div className="about-hobby-card" key={hobby.title}>
+										<div className="about-hobby-icon">
+											<FontAwesomeIcon icon={hobby.icon} />
+										</div>
+										<div>
+											<h3>{hobby.title}</h3>
+											<p>{hobby.description}</p>
+										</div>
+									</div>
+								))}
+							</div>
+						</section>
 					</div>
 					<div className="page-footer">
 						<Footer />

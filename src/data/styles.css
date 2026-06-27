@@ -1,14 +1,20 @@
 :root {
 	/* ------- colors ------- */
-	--primary-color: #27272a;
-	--secondary-color: #65656d;
-	--tertiary-color: #acacb4;
-	--quaternary-color: #e4e4e7;
-	--link-color: #14b8a6;
+	--primary-color: #f8fafc;
+	--secondary-color: #cbd5e1;
+	--tertiary-color: #94a3b8;
+	--quaternary-color: #334155;
+	--link-color: #5eead4;
+	--accent-color: #fb923c;
+	--surface-color: rgba(8, 13, 29, 0.72);
+	--surface-strong: rgba(9, 14, 30, 0.9);
+	--surface-muted: rgba(15, 23, 42, 0.64);
+	--border-color: rgba(148, 163, 184, 0.24);
+	--shadow-soft: 0 28px 90px rgba(0, 0, 0, 0.36);
 	/* ---------------------- */
 
 	/* ------- fonts ------- */
-	--primary-font: "Heebo", sans-serif;
-	--secondary-font: "Roboto", sans-serif;
+	--primary-font: "Inter", sans-serif;
+	--secondary-font: "Sora", sans-serif;
 	/* --------------------- */
 }

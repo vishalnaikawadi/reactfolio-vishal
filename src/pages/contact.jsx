@@ -44,7 +44,7 @@ const Contact = () => {
 						</div>
 
 						<div className="subtitle contact-subtitle">
-						My primary focus is on company projects; however, I am open to part-time freelance opportunities. If you have any inquiries or wish to reach out, please feel free to contact me at
+							I’m open to conversations around React Native architecture, AI-enabled mobile product work, app release systems, automation, and focused consulting. My primary focus is on company projects; however, I am open to part-time freelance opportunities. If you have any inquiries or wish to reach out, please feel free to contact me at
 							&nbsp;{" "}
 							<a href={`mailto:${INFO.main.email}`}>
 								{INFO.main.email}
